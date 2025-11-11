@@ -902,8 +902,8 @@
         {
           "atomType": "Color",
           "name": "Color",
-          "x": 0.42658730158730157,
-          "y": 0.8022284122562675,
+          "x": 0.4993386243386243,
+          "y": 0.20055710306406688,
           "uniqueID": "id-150",
           "ioValues": [],
           "selectedColorIndex": 23
@@ -918,11 +918,11 @@
             {
               "name": "Shape 1",
               "ioValue": {
-                "geometry": "move-extrude-circle-3.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-10-0-2-0",
-                "dimension": "3D",
+                "geometry": "fuse-extrude-rectangle-14-24-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--10-move-extrude-circle-3.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-10-0-2-0",
                 "tags": [
                   "keepout"
                 ],
+                "bom": [],
                 "plane": {
                   "origin": [
                     0,
@@ -941,7 +941,7 @@
                   ]
                 },
                 "color": "#D9544D",
-                "bom": []
+                "dimension": "3D"
               }
             },
             {
@@ -994,6 +994,84 @@
               "ioValue": 0
             }
           ]
+        },
+        {
+          "atomType": "Extrude",
+          "name": "Extrude",
+          "x": 0.27976190476190477,
+          "y": 0.28690807799442897,
+          "uniqueID": "id-192",
+          "ioValues": [
+            {
+              "name": "height",
+              "ioValue": -10,
+              "currentEquation": "-10"
+            }
+          ]
+        },
+        {
+          "atomType": "Fusion",
+          "name": "Fusion",
+          "x": 0.42394179894179895,
+          "y": 0.30362116991643456,
+          "uniqueID": "id-196",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": {
+                "geometry": "extrude-rectangle-14-24-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--10",
+                "dimension": "3D",
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "color": "#aad7f2",
+                "tags": [],
+                "bom": []
+              }
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": {
+                "geometry": "move-extrude-circle-3.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-10-0-2-0",
+                "dimension": "3D",
+                "tags": [],
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "color": "#aad7f2",
+                "bom": []
+              }
+            }
+          ],
+          "unionType": "Fusion"
         }
       ],
       "allConnectors": [
@@ -1002,6 +1080,12 @@
           "ap2Name": "geometry",
           "ap1ID": "id-135",
           "ap2ID": "id-139"
+        },
+        {
+          "ap1Name": "geometry",
+          "ap2Name": "geometry",
+          "ap1ID": "id-135",
+          "ap2ID": "id-192"
         },
         {
           "ap1Name": "geometry",
@@ -1035,8 +1119,20 @@
         },
         {
           "ap1Name": "geometry",
-          "ap2Name": "geometry",
+          "ap2Name": "Shape 2",
           "ap1ID": "id-158",
+          "ap2ID": "id-196"
+        },
+        {
+          "ap1Name": "geometry",
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-192",
+          "ap2ID": "id-196"
+        },
+        {
+          "ap1Name": "geometry",
+          "ap2Name": "geometry",
+          "ap1ID": "id-196",
           "ap2ID": "id-150"
         }
       ],
@@ -1136,10 +1232,59 @@
           "ioValue": {
             "geometry": [
               {
-                "geometry": "move-rotate-cut-move-extrude-circle-3.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-10-0-2-0-extrude-rectangle-14-24-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-6-0-180-0-0-0-7",
-                "dimension": "3D",
-                "tags": [
-                  "keepout"
+                "geometry": [
+                  {
+                    "geometry": "move-rotate-expand-0-cut-fuse-extrude-rectangle-14-24-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--10-move-extrude-circle-3.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-10-0-2-0-extrude-rectangle-14-24-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-6-0-180-0-0-0-7",
+                    "tags": [
+                      "keepout"
+                    ],
+                    "color": "#D9544D",
+                    "bom": [],
+                    "plane": {
+                      "origin": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "xDir": [
+                        1,
+                        0,
+                        0
+                      ],
+                      "normal": [
+                        0,
+                        0,
+                        1
+                      ]
+                    },
+                    "dimension": "3D"
+                  },
+                  {
+                    "geometry": "move-rotate-expand-1-cut-fuse-extrude-rectangle-14-24-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}--10-move-extrude-circle-3.5-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-10-0-2-0-extrude-rectangle-14-24-{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]}-6-0-180-0-0-0-7",
+                    "tags": [
+                      "keepout"
+                    ],
+                    "color": "#D9544D",
+                    "bom": [],
+                    "plane": {
+                      "origin": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "xDir": [
+                        1,
+                        0,
+                        0
+                      ],
+                      "normal": [
+                        0,
+                        0,
+                        1
+                      ]
+                    },
+                    "dimension": "3D"
+                  }
                 ],
                 "plane": {
                   "origin": [
@@ -1159,6 +1304,9 @@
                   ]
                 },
                 "color": "#D9544D",
+                "tags": [
+                  "keepout"
+                ],
                 "bom": []
               },
               {
