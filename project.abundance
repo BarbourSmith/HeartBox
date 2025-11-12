@@ -528,13 +528,11 @@
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 52,
-              "currentEquation": "52"
+              "ioValue": 52
             },
             {
               "name": "y length",
-              "ioValue": 45,
-              "currentEquation": "45"
+              "ioValue": 45
             }
           ]
         },
